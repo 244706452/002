@@ -13,4 +13,11 @@ page{
   width: calc(33% - 1px);
   float: left;
   margin-left: 2px;
+  margin-bottom: 2px;
+}
+
+.lastest{
+  font-size: 14px;
+  text-align: center;
+  margin: 15px;
 }

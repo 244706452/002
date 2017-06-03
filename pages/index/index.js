@@ -1,5 +1,4 @@
 //index.js
-var app = getApp()
 Page({
   /**
    * 页面的初始数据
@@ -8,13 +7,26 @@ Page({
     image:[],
   },
 
+  bindTapImage: function(event){
+    var index = event.currentTarget.dataset.index;
+    wx.previewImage({
+      current: this.data.image[index],
+      urls: this.data.image
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      var self = this;
-      self.setData({image:app.data.image});
-      console.log(self.data.image)
+    var self = this;
+      wx.request({
+        url: 'https://dev.mall.keku365.com/',
+        success:function(res){
+          self.setData({image:res.data.image});
+          // console.log(image)
+        }
+      })
   },
 
   /**
