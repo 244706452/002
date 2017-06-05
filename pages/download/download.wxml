@@ -1,0 +1,4 @@
+<!--pages/download/download.wxml-->
+<view class="image">
+  <image src="{{show}}"></image>
+</view>

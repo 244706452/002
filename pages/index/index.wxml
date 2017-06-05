@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="images">
-  <image class="image" mode="aspectFill" wx:for="{{image}}" wx:key="id" src="{{item}}" bindtap="bindTapImage" data-index="{{index}}" />
+  <image class="image" mode="{{item.height>item.width?'aspectFill':'aspectFit'}}" wx:for="{{images}}" wx:key="id" src="{{item.url}}" bindtap="bindTapImage" data-index="{{index}}" />
   <view style="clear: both;"></view>
 </view>
 <view class="lastest">全部加载完成</view>

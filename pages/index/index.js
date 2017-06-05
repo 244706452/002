@@ -4,16 +4,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-    image:[],
+    images:[],
   },
 
   bindTapImage: function(event){
     var index = event.currentTarget.dataset.index;
-    wx.previewImage({
-      current: this.data.image[index],
-      urls: this.data.image
+    var id = this.data.images[index].id;
+    wx.navigateTo({
+      url: '../download/download?id=' + id,
     })
+    
+
   },
+
+
 
   /**
    * 生命周期函数--监听页面加载
@@ -23,11 +27,13 @@ Page({
       wx.request({
         url: 'https://dev.mall.keku365.com/',
         success:function(res){
-          self.setData({image:res.data.image});
-          // console.log(image)
+          self.setData({images:res.data.images});
+          // console.log(self.data.images[2].width)
         }
       })
   },
+
+  
 
   /**
    * 生命周期函数--监听页面初次渲染完成
