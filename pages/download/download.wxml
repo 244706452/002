@@ -1,4 +1,4 @@
 <!--pages/download/download.wxml-->
 <view class="image">
-  <image src="{{show}}"></image>
+  <image src="{{current}}" mode="{{images.height>images.width?'aspectFill':'aspectFit'}}" bindtap="bindTapImage"></image>
 </view>

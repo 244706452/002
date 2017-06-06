@@ -5,14 +5,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    sort:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var self = this;
+    wx.request({
+      url: 'https://dev.mall.keku365.com/sort.php',
+      success: function (res) {
+        self.setData({ sort: res.data.sort });
+        console.log(this.sort);
+      }
+    })
   },
 
   /**

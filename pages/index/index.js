@@ -9,11 +9,22 @@ Page({
 
   bindTapImage: function(event){
     var index = event.currentTarget.dataset.index;
-    var id = this.data.images[index].id;
-    wx.navigateTo({
-      url: '../download/download?id=' + id,
-    })
+
+    /* 新页面预览 */
+    // var id = this.data.images[index].id;
+    // wx.navigateTo({
+    //   url: '../download/download?id=' + id,
+    // })
     
+    /* 普通预览 */
+    var urls= [];
+    for(var i = 0; i<this.data.images.length;i++){
+        urls.push(this.data.images[i].url);
+    }
+    wx.previewImage({
+      current:this.data.images[index].url,
+      urls: urls,
+    })
 
   },
 
@@ -28,7 +39,6 @@ Page({
         url: 'https://dev.mall.keku365.com/',
         success:function(res){
           self.setData({images:res.data.images});
-          // console.log(self.data.images[2].width)
         }
       })
   },
