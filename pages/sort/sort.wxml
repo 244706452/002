@@ -1,10 +1,10 @@
 <!--pages/sort/sort.wxml-->
-<view class="list">
-  <image src="http://img3.bumimi.com:600/down/2017/05/01/1/thumb_155_90_h501407434726728.jpg"></image>
+<view class="list" wx:for="{{sorts}}" wx:key="id" bindtap="bindtapDetail" data-index="{{index}}">
+  <image src="{{item.url}}"></image>
   <view class="message">
-    <view class="name">卡通动漫</view>
-    <view class="type">壁纸图片</view>
-    <view class="num">36张</view>
+    <view class="name">{{item.name}}</view>
+    <view class="type">{{item.type}}</view>
+    <view class="num">{{item.num}}张</view>
     <view class="ft_in-access"></view>
   </view>
 </view>

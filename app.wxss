@@ -8,3 +8,22 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+
+.images{
+  margin: 2px 2px 0 2px;
+}
+
+.image{
+  background: #fff;
+  height: 200px;
+  width: calc(33% - 1px);
+  float: left;
+  margin-left: 2px;
+  margin-bottom: 2px;
+}
+
+.lastest{
+  font-size: 14px;
+  text-align: center;
+  margin: 15px;
+}

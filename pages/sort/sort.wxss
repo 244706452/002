@@ -6,6 +6,7 @@ page{
 .list{
   margin-bottom: 2px;
   background: white;
+  padding-right: 10px;
 }
 
 .list image{
@@ -22,6 +23,9 @@ page{
 }
 
 .type{
+  position: absolute;
+  bottom: 22px;
+  left: 30%;
   font-size: 12px;
   color: gray;
 }
@@ -35,11 +39,6 @@ page{
 }
 
 .ft_in-access {
-  padding-right: 13px;
-  position: relative;
-}
-.ft_in-access:after {
-  content: " ";
   display: inline-block;
   height: 6px;
   width: 6px;
@@ -53,3 +52,4 @@ page{
   margin-top: -4px;
   right: 2px;
 }
+

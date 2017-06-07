@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/newest/newest",
     "pages/sort/sort",
+    "pages/sort/detail",
     "pages/search/search",
     "pages/download/download"
   ],

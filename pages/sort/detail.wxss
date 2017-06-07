@@ -1,0 +1,5 @@
+/* pages/sort/detail.wxss */
+page{
+  background:#f0f0f0;
+}
+
