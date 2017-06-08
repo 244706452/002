@@ -5,20 +5,29 @@ Page({
    */
   data: {
     images: [],
+    _id:'',
   },
 
   bindTapImage: function (event) {
     var index = event.currentTarget.dataset.index;
-
-    /* 普通预览 */
     var urls = [];
     for (var i = 0; i < this.data.images.length; i++) {
       urls.push(this.data.images[i].url);
-    }
+    };
     wx.previewImage({
       current: this.data.images[index].url,
-      urls: urls,
-    })
+      urls: urls, 
+    });
+  },
+
+  requestPage: function () {
+    var self = this;
+    wx.request({
+      url: 'https://dev.mall.keku365.com/sort/' + self.data._id + '.php',
+      success: function (res) {
+        self.setData({ images: res.data.images });
+      },
+    });
   },
 
   /**
@@ -26,14 +35,7 @@ Page({
    */
   onLoad: function (options) {
     var self = this;
-    var id = options.id;
-    wx.request({
-      url: 'https://dev.mall.keku365.com/sort/' + id + '.php',
-      success: function (res) {
-        self.setData({ images: res.data.images });
-        console.log(images);
-      },
-    });
+    self.setData({ _id: options.id });
   },
 
     /**
@@ -47,7 +49,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.requestPage();
   },
 
   /**
@@ -68,7 +70,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.requestPage();
+    wx.stopPullDownRefresh();
   },
 
   /**

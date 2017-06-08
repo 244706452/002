@@ -11,7 +11,6 @@ Page({
   bindtapDetail: function(event){
     var index = event.currentTarget.dataset.index;
     var id = this.data.sorts[index].id;
-    console.log(id);
     wx.navigateTo({
       url: 'detail?id=' + id,
     })
