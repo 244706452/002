@@ -1,1 +1,15 @@
 /* pages/newest/newest.wxss */
+.button-style{  
+    background-color: #eee;  
+    border-radius: 8rpx;  
+    margin: 20rpx;  
+}  
+
+.input-style{
+  background: #eee;
+  height:45px;
+  text-align:center;
+  margin: 20rpx;  
+  border-radius: 8rpx;
+  border: solid 1px #d7d7d7;
+}

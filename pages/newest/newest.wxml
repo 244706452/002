@@ -1,2 +1,7 @@
 <!--pages/newest/newest.wxml-->
-<text>pages/newest/newest.wxml</text>
+<button class="button-style"  bindtap="listenerButtonPlay">播放</button>  
+<button class="button-style" bindtap="listenerButtonPause">暂停</button>  
+<button class="button-style" bindtap="listenerButtonStop">停止播放</button>  
+<button class="button-style" bindtap="listenerButtonGetPlayState">获取播放状态</button>    
+<input class="input-style" placeholder="输入播放进度" bindinput="listenerSeek" type="number" />
+<button class="button-style" bindtap="listenerButtonSeek">设置播放进度</button>
